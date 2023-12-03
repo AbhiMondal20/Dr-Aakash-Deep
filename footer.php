@@ -118,7 +118,7 @@
     </div>
   </div>
 </section>
-<script src="assets/js/jquery-3.5.1.min" type="text/javascript"></script>
+<script src="assets/js/jquery-3.5.1.min.js" type="text/javascript" ></script>
 <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 
