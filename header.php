@@ -1,3 +1,6 @@
+<?php 
+include('backend/db_conn.php');
+?>
 <!DOCTYPE html>
 <html data-wf-page="6426aa53f075abfb20341788" data-wf-site="6426aa53f075ab6c61341787" data-wf-status="1">
   <head>
