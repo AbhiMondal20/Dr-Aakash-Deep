@@ -7,87 +7,76 @@ if (isset($_SESSION['login']) && $_SESSION['login']) {
     echo "<script>location.href='../index';</script>";
 }
 
-
 include('header.php');
 ?>
 <section class="content patients">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>All Patients</h2>
-            <small class="text-muted">Welcome to Paramount Hospital</small>
-            <div align="right" style="margin-top: -3rem;">
+            <h2>All Appointment</h2>
+            <small class="text-muted">Welcome to Dr. Aakash Deep's Clinic</small>
+            <div align="right" style="margin-top: -3rem; display:none;">
                 <button type="button" class="btn btn-default waves-effect m-r-20" data-toggle="modal"
                     data-target="#add_new_patient"> <i class="material-icons">add_box</i>New Patient Entry</button>
             </div>
         </div>
-        <table class="display table_now">
-            <thead>
-                <tr>
-                    <th>Reg. Id</th>
-                    <th>Reg. Date</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>BP</th>
-                    <th>Weight</th>
-                    <th>Dept</th>
-                    <th>Address</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $sql = "SELECT * FROM patient ORDER BY id DESC";
-                $res = mysqli_query($conn, $sql);
-                while ($row = mysqli_fetch_assoc($res)) {
-                    // patient Table
-                    $id = $row['id'];
-                    $reg_id = $row['reg_id'];
-                    $name = $row['name'];
-                    $email = $row['email'];
-                    $mobile = $row['mobile'];
-                    $age = $row['age'];
-                    $gender = $row['gender'];
-                    $bp = $row['bp'];
-                    $weight = $row['weight'];
-                    $dept = $row['dept'];
-                    $old_date = $row["reg_date"];
-                    $middle = strtotime($old_date);
-                    $reg_date = date("d-m-Y ", $middle);
-                    $address = $row['address'];
-                    $status = $row['status'];
-
-                    echo '<tr>
-                                <td>' . $reg_id . '</td>
-                                <td>' . $reg_date . '</td>
-                                <td>' . $name . '</td>
-                                <td>' . $email . '</td>
-                                <td>' . $mobile . '</td>
-                                <td>' . $age . '</td>
-                                <td>' . $gender . '</td>
-                                <td>' . $bp . '</td>
-                                <td>' . $weight . '</td>
-                                <td>' . $dept . '</td>
-                                <td>' . $address . '</td>
-                                <td>' . ($status == 1 ? '<a href="?id=' . $id . '&type=deactive" class="btn btn-sm btn-raised bg-cyan waves-effect">Active</a>' : '<a href="?id=' . $id . '&type=active" class="btn btn-sm bg-danger waves-effect text-white" type="button">Deactive <span class="badge"></span></a>') . '</td>
-                                <td>
-                                    <a href="#" class="btn btn-sm btn-info shadow-none waves-effect" title="Edit"><i class="fa-solid fa-pen-to-square"></i></a> 
-                                    
-                                    <a href="#" class="btn btn-sm btn-primary shadow-none waves-effect" title="Reports"><i class="fa-solid fa-file"></i></a>
-
-                                    <a href="prescription?id=' . $id . '&regId=' . $reg_id . '" target="_BLANK" class="btn btn-sm btn-secondary shadow-none waves-effect" title="Prescription"><i class="fa-solid fa-prescription"></i></a> 
-                                    
-                                </td>
-                            </tr>';
-                }
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 ">
+                <div class="card">
+                    <div class="body">
+                        <table class="display table_now">
+                            <thead>
+                                <tr>
+                                    <th>Reg. Id</th>
+                                    <th>Appt. Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Dept</th>
+                                    <th>Messaage</th>
+                                    <!-- <th>Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $sql = "SELECT * FROM appt ORDER BY id DESC";
+                                $res = mysqli_query($conn, $sql);
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    // patient Table
+                                    $id = $row['id'];
+                                    // $reg_id = $row['reg_id'];
+                                    $name = $row['name'];
+                                    $email = $row['email'];
+                                    $mobile = $row['phone'];
+                                    $message = $row['message'];
+                                    $dept = $row['services'];
+                                    $old_date = $row["date"];
+                                    $middle = strtotime($old_date);
+                                    $reg_date = date("d-m-Y ", $middle);
+                                    echo '<tr>
+                                                <td>' . $id . '</td>
+                                                <td>' . $reg_date . '</td>
+                                                <td>' . $name . '</td>
+                                                <td>' . $email . '</td>
+                                                <td>' . $mobile . '</td>
+                                                <td>' . $dept . '</td>
+                                                <td>' . $message . '</td>
+                                                </tr>';
+                                                // <td>
+                                                //     <a href="#" class="btn btn-sm btn-info shadow-none waves-effect" title="Edit"><i class="fa-solid fa-pen-to-square"></i></a> 
+                                                    
+                                                //     <a href="#" class="btn btn-sm btn-primary shadow-none waves-effect" title="Reports"><i class="fa-solid fa-file"></i></a>
+                                                //     <a href="prescription?id=' . $id . '&regId=' . $reg_id . '" target="_BLANK" class="btn btn-sm btn-secondary shadow-none waves-effect" title="Prescription"><i class="fa-solid fa-prescription"></i></a>
+                                                // </td>
+                                }
 
 
-                ?>
-            </tbody>
-        </table>
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -106,27 +95,6 @@ include('header.php');
                             <div class="body">
                                 <form action="" method="POST" enctype="multipart/form-data">
                                     <div class="row clearfix">
-                                        <div class="col-sm-6 ">
-                                            <div class="form-group">
-                                                <div class="form-line">
-                                                    <?php
-                                                    $sql = 'SELECT * FROM patient ORDER BY id DESC LIMIT 1';
-                                                    $res = mysqli_query($conn, $sql);
-                                                    $row = mysqli_fetch_assoc($res);
-                                                    $last_id = $row['reg_id'];
-                                                    if ($last_id == '') {
-                                                        $reg_id = "REG001";
-                                                    } else {
-                                                        $reg_id = substr($last_id, 3);
-                                                        $reg_id = intval($reg_id);
-                                                        $reg_id = "REG" . str_pad(($reg_id + 1), 3, '0', STR_PAD_LEFT);
-                                                    }
-                                                    ?>
-                                                    <input type="text" class="form-control" required name="reg_id"
-                                                        value="<?php echo $reg_id; ?>" readonly>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <div class="form-line">

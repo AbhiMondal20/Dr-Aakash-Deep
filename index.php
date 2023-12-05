@@ -797,15 +797,14 @@
         </div>
       </div>
       <div class="contact-form-wrapper w-form">
-        <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form" method="get"
-          class="contact-form">
-          <input type="text" class="contact-field w-input" maxlength="256" name="Name" data-name="Name"
+        <form method="get" class="contact-form" action="get_contact">
+          <input type="text" class="contact-field w-input" maxlength="256" name="name" data-name="Name"
             placeholder="Name" id="Name" required="" />
-          <input type="tel" class="contact-field w-input" maxlength="256" name="Phone" data-name="Phone"
+          <input type="tel" class="contact-field w-input" maxlength="256" name="phone" data-name="Phone"
             placeholder="Phone" id="Phone-2" required="" />
-          <input type="email" class="contact-field w-input" maxlength="256" name="Email" data-name="Email"
+          <input type="email" class="contact-field w-input" maxlength="256" name="email" data-name="Email"
             placeholder="Email" id="email" required="" />
-          <select id="field" name="field" data-name="Field" class="contact-select-field w-select">
+          <select id="field" name="services" data-name="Field" class="contact-select-field w-select">
             <option value="All" selected="selected">- Select Services -</option>
             <option value="Central Retinal Vein Occlusion (CRVO)">Central Retinal Vein Occlusion (CRVO)</option>
             <option value="Retinal Tear">Retinal Tear</option>
@@ -818,7 +817,7 @@
             <option value="Retinitis Pigmentosa">Retinitis Pigmentosa</option>
             <option value="Retinopathy of Prematurity">Retinopathy of Prematurity</option>
           </select>
-          <textarea id="Message" name="Message" maxlength="5000" data-name="field" placeholder="Message"
+          <textarea id="Message" name="message" maxlength="5000" data-name="field" placeholder="Message"
             class="contact-message-field w-input"></textarea>
           <div class="contact-form-btn">
             <input type="submit" value="Submit Now" data-wait="Please wait..." class="primary-btn w-button" />

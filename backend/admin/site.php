@@ -8,39 +8,38 @@ include 'header.php';
 ?>
 
 <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+<?php
+$sql = "SELECT * FROM info";
+$res = mysqli_query($conn, $sql);
+while ($row = mysqli_fetch_assoc($res)) {
+    $url = $row['url'];
+    $title = $row['title'];
+    $fav_icon = $row['fav_icon'];
+    $logo = $row['logo'];
+    $address = $row['address'];
+    $email = $row['email'];
+    $email2 = $row['email2'];
+    $mobile = $row['mobile'];
+    $mobile2 = $row['mobile2'];
+    $whatsapp = $row['whatsapp'];
+    $facebook = $row['facebook'];
+    $youtube = $row['youtube'];
+    $instagram = $row['instagram'];
+    $blog = $row['blog'];
+}
 
+?>
 <!-- User List -->
 <section class="content patients">
     <div class="container-fluid">
         <div class="block-header">
             <h2>Site Info</h2>
-            <small class="text-muted">Welcome to PMP</small>
+            <small class="text-muted">Welcome to Dr. Aakash Deep's Clinic</small>
         </div>
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 ">
                 <div class="card">
                     <div class="body">
-                        <?php
-                        $sql = "SELECT * FROM info";
-                        $res = mysqli_query($conn, $sql);
-                        while ($row = mysqli_fetch_assoc($res)) {
-                            $url = $row['url'];
-                            $title = $row['title'];
-                            $fav_icon = $row['fav_icon'];
-                            $logo = $row['logo'];
-                            $address = $row['address'];
-                            $email = $row['email'];
-                            $email2 = $row['email2'];
-                            $mobile = $row['mobile'];
-                            $mobile2 = $row['mobile2'];
-                            $whatsapp = $row['whatsapp'];
-                            $facebook = $row['facebook'];
-                            $youtube = $row['youtube'];
-                            $instagram = $row['instagram'];
-                            $blog = $row['blog'];
-                        }
-
-                        ?>
                         <form action="" method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
                                 <div class="col-sm-6 ">

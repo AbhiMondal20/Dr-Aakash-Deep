@@ -14,7 +14,7 @@ include 'header.php';
     <div class="container-fluid">
         <div class="block-header">
             <h2>Blogging</h2>
-            <small class="text-muted">Welcome to Paramount Hospital</small>
+            <small class="text-muted">Welcome to Dr. Aakash Deep's Clinic</small>
         </div>
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 ">
@@ -26,7 +26,7 @@ include 'header.php';
                                     <div class="form-group drop-custum">
 
                                         <select class="form-control show-tick" required name="dr_id">
-                                            <option value="">-- Select Doctor --</option>
+                                            <option value="">-- Select Any --</option>
                                             <?php
                                             $sql = "SELECT * FROM user Where status = '1'";
                                             $res = mysqli_query($conn, $sql);

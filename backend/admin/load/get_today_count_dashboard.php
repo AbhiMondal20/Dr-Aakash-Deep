@@ -2,25 +2,25 @@
 include('../../db_conn.php');
 
 // Fetch Total Patients
-$sql = "SELECT COUNT(*) AS total_patients FROM patient";
+$sql = "SELECT COUNT(*) AS total_patients FROM appt";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $total_patients = $row['total_patients'];
 
 // Fetch Today's Patients
-$sql = "SELECT COUNT(*) AS today_total_patients FROM patient WHERE DATE(date) = CURDATE()";
+$sql = "SELECT COUNT(*) AS today_total_patients FROM appt WHERE DATE(date) = CURDATE()";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $today_total_patients = $row['today_total_patients'];
 
 // Fetch Today's Visits
-$sql = "SELECT COUNT(*) AS visit_patients FROM patient WHERE DATE(date) = CURDATE() AND status = '1'";
+$sql = "SELECT COUNT(*) AS visit_patients FROM appt WHERE DATE(date) = CURDATE() AND status = '1'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $visit_patients = $row['visit_patients'];
 
 // Fetch Today's Pending
-$sql = "SELECT COUNT(*) AS pending_patients FROM patient WHERE DATE(date) = CURDATE() AND status = '0'";
+$sql = "SELECT COUNT(*) AS pending_patients FROM appt WHERE DATE(date) = CURDATE() AND status = '0'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 $pending_patients = $row['pending_patients'];

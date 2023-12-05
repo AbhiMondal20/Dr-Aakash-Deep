@@ -6,10 +6,7 @@ if (!isset($_SESSION['login']) || !$_SESSION['login']) {
 }
 include 'header.php';
 ?>
-
 <script src="tinymce/js/tinymce/tinymce.min.js"></script>
-
-
 <?php
 $blog_id = $_GET['id'];
 $title = $_GET['title'];
@@ -32,7 +29,7 @@ while ($row = mysqli_fetch_assoc($res)) {
     <div class="container-fluid">
         <div class="block-header">
             <h2>Update Blogging</h2>
-            <small class="text-muted">Welcome to Dr. Aakash Deep Clinik</small>
+            <small class="text-muted">Welcome to Dr. Aakash Deep's Clinic</small>
         </div>
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 ">

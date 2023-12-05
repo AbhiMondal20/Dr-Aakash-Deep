@@ -17,7 +17,7 @@ if (isset($_GET['type']) && $_GET['type'] !== '' && isset($_GET['id']) && $_GET[
         if ($type == 'deactive') {
             $status = 0;
         }
-        $sql2 = "UPDATE `user` set status = '$status' WHERE id = '$id'";
+        $sql2 = "UPDATE `blogs` set status = '$status' WHERE id = '$id'";
         $result = mysqli_query($conn, $sql2);
         if ($result) {
             echo "<script>
@@ -51,7 +51,7 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
     <div class="container-fluid">
         <div class="block-header">
             <h2>Add Blog</h2>
-            <small class="text-muted">Welcome to Dr. Aakash Deep clinik </small>
+            <small class="text-muted">Welcome to Dr. Aakash Deep's clinic </small>
             <div align="right" style="margin-top: -3rem;">
                 <a href="add-blog" class="btn btn-default waves-effect m-r-20"><i class="material-icons">add_box</i> Add
                     New Blog</a>
@@ -97,8 +97,8 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
                                         <td><img src="' . $arc_images . '" height="50px"></td>
                                         <td><img src="' . $images . '" height="50px"></td>'; ?>
                                         <td><?php
-                                            if($status == 1){
-                                                echo '<a  href="?id=' . $id . '&type=deactive" class="btn btn-sm btn-raised bg-cyan waves-effect">Active</a>';
+                                            if($status == '1'){
+                                                echo '<a href="?id=' . $id . '&type=deactive" class="btn btn-sm btn-raised bg-cyan waves-effect">Active</a>';
                                             }else{
                                                 echo '<a href="?id=' . $id . '&type=active" class="btn btn-sm btn-raised bg-red waves-effect">Deactive</a>';
                                             }
@@ -119,8 +119,6 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
         </div>
     </div>
 </section>
-
-
 
 
 <!-- add user Modal -->
@@ -187,8 +185,7 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
                                     <div class="row clearfix">
                                         <div class="col-sm-12">
                                             <center>
-                                                <input type="submit" class="btn btn-raised g-bg-cyan" name="save"
-                                                    value="SAVE">
+                                                <input type="submit" class="btn btn-raised g-bg-cyan" name="save" value="SAVE">
                                             </center>
                                         </div>
                                     </div>

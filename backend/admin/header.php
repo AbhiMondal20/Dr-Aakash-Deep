@@ -174,21 +174,9 @@ while ($row = mysqli_fetch_assoc($res)) {
             <ul class="list">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active open"><a href="index"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-hospital-user"></i><span>Appointment</span> </a>
                     <ul class="ml-menu">
-                        <li><a href="doctor-schedule">Doctor Schedule</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-user-doctor"></i><span>Doctors</span> </a>
-                    <ul class="ml-menu">
-                        <li><a href="doctors">All Doctors</a></li>
-                    </ul>
-                </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-hospital-user"></i><span>Patients</span> </a>
-                    <ul class="ml-menu">
-                        <li><a href="patients">All Patients</a></li>
-                        <li><a href="prescription">Prescription</a></li>
-                        <li><a href="patient-invoice">Patient Invoice</a></li>
+                        <li><a href="patients">All Appointments</a></li>
                     </ul>
                 </li>
                 <li><a href="blogs" class="menu-toggle1"><i class="fa-solid fa-blog"></i><span>Blog</span></a></li>
