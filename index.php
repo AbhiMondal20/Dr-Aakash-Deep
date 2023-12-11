@@ -31,9 +31,9 @@
           <img src="assets/img/eye.png" loading="lazy" alt="human icon" class="hero-widget-image">
           <div>More than 20K Patients treated!</div>
         </div>
-        <img src="assets/img/dr.webp" loading="lazy"
+        <img src="assets/img/drDeep.webp" loading="lazy"
           style="opacity:1" data-w-id="a04cc73c-65b4-3607-3673-c636f38916dd"
-          srcset="assets/img/dr.webp 500w, assets/img/dr.webp 800w, assets/img/dr.webp 1080w, assets/img/dr.webp 1144w"
+          srcset="assets/img/drDeep.webp 500w, assets/img/drDeep.webp 800w, assets/img/drDeep.webp 1080w, assets/img/drDeep.webp 1144w"
           sizes="(max-width: 767px) 92vw, (max-width: 991px) 69vw, (max-width: 1439px) 40vw, 532px" alt="Doctor image" class="hero-image">
         <div class="hero-circle"></div>
       </div>
@@ -798,29 +798,16 @@
       </div>
       <div class="contact-form-wrapper w-form">
         <form method="get" class="contact-form" action="get_contact">
-          <input type="text" class="contact-field w-input" maxlength="256" name="name" data-name="Name"
+          <input type="text" class="contact-field w-input" maxlength="255" name="name" data-name="Name"
             placeholder="Name" id="Name" required="" />
-          <input type="tel" class="contact-field w-input" maxlength="256" name="phone" data-name="Phone"
+          <input type="tel" class="contact-field w-input" maxlength="10" name="phone" data-name="Phone"
             placeholder="Phone" id="Phone-2" required="" />
-          <input type="email" class="contact-field w-input" maxlength="256" name="email" data-name="Email"
-            placeholder="Email" id="email" required="" />
-          <select id="field" name="services" data-name="Field" class="contact-select-field w-select">
-            <option value="All" selected="selected">- Select Services -</option>
-            <option value="Central Retinal Vein Occlusion (CRVO)">Central Retinal Vein Occlusion (CRVO)</option>
-            <option value="Retinal Tear">Retinal Tear</option>
-            <option value="Retinal Detachment">Retinal Detachment</option>
-            <option value="Branch Retinal Vein Occlusion (BRVO)">Branch Retinal Vein Occlusion (BRVO)</option>
-            <option value="Diabetic Retinopathy">Diabetic Retinopathy</option>
-            <option value="Epiretinal Membrane">Epiretinal Membrane</option>
-            <option value="Macular Hole">Macular Hole</option>
-            <option value="Macular Degeneration">Macular Degeneration</option>
-            <option value="Retinitis Pigmentosa">Retinitis Pigmentosa</option>
-            <option value="Retinopathy of Prematurity">Retinopathy of Prematurity</option>
-          </select>
-          <textarea id="Message" name="message" maxlength="5000" data-name="field" placeholder="Message"
+            <input type="date" class="contact-field w-input" maxlength="255" name="appt_date" data-name="date"
+            placeholder="Date" required="" />
+          <textarea id="address" name="address" maxlength="255" data-name="field" placeholder="Address"
             class="contact-message-field w-input"></textarea>
           <div class="contact-form-btn">
-            <input type="submit" value="Submit Now" data-wait="Please wait..." class="primary-btn w-button" />
+            <input type="submit" value="Book Now" data-wait="Please wait..." class="primary-btn w-button" />
           </div>
         </form>
         <div class="w-form-done">

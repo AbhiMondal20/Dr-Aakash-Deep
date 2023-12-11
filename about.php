@@ -57,9 +57,9 @@
                     <img src="assets/img/eye.png" loading="lazy" alt="human icon" class="hero-widget-image">
                     <div>More than 20K Patients treated!</div>
                 </div>
-                <img src="assets/img/dr.webp" loading="lazy" style="opacity:1"
+                <img src="assets/img/drDeep.webp" loading="lazy" style="opacity:1"
                     data-w-id="a04cc73c-65b4-3607-3673-c636f38916dd"
-                    srcset="assets/img/dr.webp 500w, assets/img/dr.webp 800w, assets/img/dr.webp 1080w, assets/img/dr.webp 1144w"
+                    srcset="assets/img/drDeep.webp 500w, assets/img/drDeep.webp 800w, assets/img/drDeep.webp 1080w, assets/img/drDeep.webp 1144w"
                     sizes="(max-width: 767px) 92vw, (max-width: 991px) 69vw, (max-width: 1439px) 40vw, 532px"
                     alt="Doctor image" class="hero-image">
                 <div class="hero-circle"></div>

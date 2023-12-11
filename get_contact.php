@@ -2,19 +2,18 @@
 
 include('backend/db_conn.php');
 
-if (isset($_GET['name']) && isset($_GET['phone']) && isset($_GET['email']) && isset($_GET['services']) && isset($_GET['message'])) {
+if (isset($_GET['name']) && isset($_GET['phone']) && isset($_GET['appt_date']) && isset($_GET['address'])) {
     $name = $_GET['name'];
-    $email = $_GET['email'];
     $phone = $_GET['phone'];
-    $message = $_GET['message'];
-    $services = $_GET['services'];
-  $sql = "INSERT INTO `appt`(`name`, `phone`, `email`, `services`, `message`) VALUES ('$name','$phone','$email','$services','$message')";
-    $res = mysqli_query($conn, $sql);
+    $address = $_GET['address'];
+    $appt_date = $_GET['appt_date'];
   
+    $sql = "INSERT INTO `appt`(`name`, `phone`, `appt_date`, `address`) VALUES ('$name','$phone','$appt_date','$address')";
+    $res = mysqli_query($conn, $sql);
     if ($res) {
       echo '
       <script>
-          alert("Thank you! Your submission has been received!");
+          alert("Thank you! Your Appointment has been received!");
           window.location.href= "/";
           </script>';
   

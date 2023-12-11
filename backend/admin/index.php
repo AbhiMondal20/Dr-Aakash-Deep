@@ -2,13 +2,10 @@
 session_start();
 if (isset($_SESSION['login']) && $_SESSION['login']) {
     $email = $_SESSION['email'];
-
 } else {
     echo "<script>location.href='../index';</script>";
 }
-
 include 'header.php';
-
 ?>
 <section class="content home">
     <div class="container-fluid">
@@ -212,8 +209,7 @@ while ($row = mysqli_fetch_assoc($res)) {
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label id="imageSizeLabel" for="floatingInputGroup2">Blog</label>
-                                            <input type="text" class="form-control" placeholder="Blog" name="blog"
-                                                value="<?php echo $blog; ?>">
+                                            <input type="text" class="form-control" placeholder="Blog" name="blog" value="<?php echo $blog; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -482,7 +478,6 @@ if (isset($_POST['save'])) {
                         }
                     }
                 }
-
                 html += '<tr>' +
                     '<td>' + (index + 1) + '</td>' +
                     '<td>' + item.name + '</td>' +
@@ -517,14 +512,9 @@ if (isset($_POST['save'])) {
         }
     });
 }
-
 // Call the fetchData function initially to populate the table
 fetchData();
-
 // Set an interval to fetch data and update the table every few seconds (e.g., 5 seconds)
 setInterval(fetchData, 5000); // Adjust the interval as needed
-
 </script>
-
-
 <?php include 'footer.php'?>

@@ -29,10 +29,8 @@ include('header.php');
                                     <th>Reg. Id</th>
                                     <th>Appt. Date</th>
                                     <th>Name</th>
-                                    <th>Email</th>
                                     <th>Mobile</th>
-                                    <th>Dept</th>
-                                    <th>Messaage</th>
+                                    <th>Address</th>
                                     <!-- <th>Action</th> -->
                                 </tr>
                             </thead>
@@ -45,21 +43,17 @@ include('header.php');
                                     $id = $row['id'];
                                     // $reg_id = $row['reg_id'];
                                     $name = $row['name'];
-                                    $email = $row['email'];
                                     $mobile = $row['phone'];
-                                    $message = $row['message'];
-                                    $dept = $row['services'];
-                                    $old_date = $row["date"];
+                                    $address = $row['address'];
+                                    $old_date = $row["appt_date"];
                                     $middle = strtotime($old_date);
                                     $reg_date = date("d-m-Y ", $middle);
                                     echo '<tr>
                                                 <td>' . $id . '</td>
                                                 <td>' . $reg_date . '</td>
                                                 <td>' . $name . '</td>
-                                                <td>' . $email . '</td>
                                                 <td>' . $mobile . '</td>
-                                                <td>' . $dept . '</td>
-                                                <td>' . $message . '</td>
+                                                <td>' . $address . '</td>
                                                 </tr>';
                                                 // <td>
                                                 //     <a href="#" class="btn btn-sm btn-info shadow-none waves-effect" title="Edit"><i class="fa-solid fa-pen-to-square"></i></a> 
