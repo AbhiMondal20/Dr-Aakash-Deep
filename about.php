@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div data-w-id="8b5fd5e5-1c4e-9cac-1090-3a6892ea4416" style="opacity: 1" class="reason-block">
-                    <img src="assets/img/Satisfaction.webp" loading="lazy" alt="heart icon" class="reason-block-icon" />
+                    <img src="assets/img/satisfaction.webp" loading="lazy" alt="heart icon" class="reason-block-icon" />
                     <div class="reason-block-title">
                         <div class="h5 bold">Satisfaction</div>
                     </div>

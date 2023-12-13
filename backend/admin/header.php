@@ -179,6 +179,11 @@ while ($row = mysqli_fetch_assoc($res)) {
                         <li><a href="patients">All Appointments</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-brands fa-servicestack"></i><span>Services</span> </a>
+                    <ul class="ml-menu">
+                        <li><a href="services">All Services</a></li>
+                    </ul>
+                </li>
                 <li><a href="blogs" class="menu-toggle1"><i class="fa-solid fa-blog"></i><span>Blog</span></a></li>
                 <li><a href="user" class="menu-toggle1"><i class="zmdi zmdi-account-add"></i><span>Add User</span></a></li>
             </ul>

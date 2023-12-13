@@ -17,11 +17,11 @@ if (isset($_GET['type']) && $_GET['type'] !== '' && isset($_GET['id']) && $_GET[
         if ($type == 'deactive') {
             $status = 0;
         }
-        $sql2 = "UPDATE `blogs` set status = '$status' WHERE id = '$id'";
+        $sql2 = "UPDATE `services` set status = '$status' WHERE id = '$id'";
         $result = mysqli_query($conn, $sql2);
         if ($result) {
             echo "<script>
-                    window.location.href =  'blogs';
+                    window.location.href =  'services';
                 </script>";
         }
     }
@@ -29,14 +29,14 @@ if (isset($_GET['type']) && $_GET['type'] !== '' && isset($_GET['id']) && $_GET[
 
 if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && $_GET['id'] > 0) {
     $id = $_GET['id'];
-    $sql2 = "DELETE FROM `blogs` WHERE id = ?";
+    $sql2 = "DELETE FROM `services` WHERE id = ?";
     $stmt = $conn->prepare($sql2);
     $stmt->bind_param("i", $id);
     if ($stmt->execute()) {
         echo "<script>
                 swal('Success!', '', 'success');
                 setTimeout(function(){
-                    window.location.href = 'blogs';
+                    window.location.href = 'services';
                 }, 2000);
         </script>";
         exit;
@@ -50,11 +50,11 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
 <section class="content patients">
     <div class="container-fluid">
         <div class="block-header">
-            <h2>Add Blog</h2>
+            <h2>Add Services</h2>
             <small class="text-muted">Welcome to Dr. Aakash Deep's clinic </small>
             <div align="right" style="margin-top: -3rem;">
-                <a href="add-blog" class="btn btn-default waves-effect m-r-20"><i class="material-icons">add_box</i> Add
-                    New Blog</a>
+                <a href="add-services" class="btn btn-default waves-effect m-r-20"><i class="material-icons">add_box</i> Add
+                    New Services</a>
             </div>
         </div>
         <div class="row clearfix">
@@ -77,17 +77,16 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "SELECT * FROM blogs";
+                                    $sql = "SELECT * FROM services";
                                     $res = mysqli_query($conn, $sql);
                                     while ($row = mysqli_fetch_assoc($res)) {
                                         $id = $row['id'];
                                         $title = $row['title'];
-                                        $upload_date = $row['upload_date'];
                                         $desc = substr($row['description'], 0, 80) . (strlen($row['description']) > 80 ? '...' : '');
                                         $arc_images = $row['arc_images'];
                                         $images = $row['images'];
                                         $status = $row['status'];
-                                        $date = date('d-M-Y', strtotime($row['upload_date']));
+                                        $date = date('d-M-Y', strtotime($row['date']));
 
                                         echo '  
                                         <tr>
@@ -105,7 +104,7 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
                                         ?></td>
                                     <?php echo
                                         '<td>' . $date . '</td>
-                                        <td><a href="edit_blogs?id=' . $id . '&title=' . $title . '" class="btn btn-info waves-effect m-r-20"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <td><a href="edit_services?id=' . $id . '&title=' . $title . '" class="btn btn-info waves-effect m-r-20"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="?id='.$id.'&type=delete" class="btn btn-warning waves-effect m-r-20"><i class="fa-solid fa-trash"></i></a></td>
                                         </tr>';
                                     }
@@ -119,6 +118,7 @@ if (isset($_GET['type']) && $_GET['type'] === 'delete' && isset($_GET['id']) && 
         </div>
     </div>
 </section>
+
 
 <!-- PHP code -->
 <?php
