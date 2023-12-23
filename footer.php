@@ -56,7 +56,7 @@
           <div class="footer-column-title">
             Explore
           </div>
-          <a href="#" class="footer-link">
+          <a href="best-retina-surgeon-in-siliguri" class="footer-link">
             Retina Surgeon In Siliguri
           </a>
           <a href="#" class="footer-link">

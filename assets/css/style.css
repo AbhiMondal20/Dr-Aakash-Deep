@@ -3852,6 +3852,12 @@ figure {
   border-radius: 10px;
   color: #081e29;
 }
+.doctor-block2-here {
+  width: 100%;
+  max-width: 70%;
+  border-radius: 10px;
+  color: #081e29;
+}
 
 .doctor-image {
   width: 100%;
